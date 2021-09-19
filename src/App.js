@@ -52,7 +52,7 @@ function App() {
         <Box sx={{ flexGrow: 1 }}>
           <Grid container spacing={2}>
             <Grid item xs={12}>
-              <HeaderItem>xs=12 INSERT HEADER</HeaderItem>
+              <HeaderItem>xs=12 INSERT HEADER here</HeaderItem>
             </Grid>
 
             <Grid item xs={6} md={2}>
