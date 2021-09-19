@@ -28,9 +28,25 @@ function App() {
               <Item>SIDEBAR</Item>
               <Item>SIDEBAR</Item>
               <Item>SIDEBAR</Item>
+              <Item>SIDEBAR</Item>
+              <Item>SIDEBAR</Item>
+              <Item>SIDEBAR</Item>
+              <Item>SIDEBAR</Item>
+              <Item>SIDEBAR</Item>
+              <Item>SIDEBAR</Item>
+              <Item>SIDEBAR</Item>
+              <Item>SIDEBAR</Item>
             </Grid>
 
             <Grid item xs={6} md={8}>
+              <Item>MAIN AREA</Item>
+              <Item>MAIN AREA</Item>
+              <Item>MAIN AREA</Item>
+              <Item>MAIN AREA</Item>
+              <Item>MAIN AREA</Item>
+              <Item>MAIN AREA</Item>
+              <Item>MAIN AREA</Item>
+              <Item>MAIN AREA</Item>
               <Item>MAIN AREA</Item>
               <Item>MAIN AREA</Item>
               <Item>MAIN AREA</Item>
@@ -43,10 +59,6 @@ function App() {
               <Item>EMTPY OR INFO</Item>
               <Item>EMTPY OR INFO</Item>
             </Grid>
-
-            <Grid item xs={12}>
-              <Item>FOOTER</Item>
-            </Grid>
           </Grid>
         </Box>
       </div>
@@ -56,9 +68,9 @@ function App() {
 }
 
 const Footer = () => (
-  <div
-    style={{ height: "100px", width: "100%", backgroundColor: "#282c34" }}
-  ></div>
+  <Grid item xs={12}>
+    <Item>FOOTER</Item>
+  </Grid>
 );
 
 export default App;
