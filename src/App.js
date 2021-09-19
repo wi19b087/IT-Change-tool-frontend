@@ -5,6 +5,9 @@ import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
 
+// const backGroundColorLight = "#282c34";
+// const backGroundColor = "#000000";
+
 const HeaderItem = styled(Paper)(({ theme }) => ({
   ...theme.typography.body2,
   padding: theme.spacing(1),
