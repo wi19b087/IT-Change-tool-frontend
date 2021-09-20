@@ -20,6 +20,7 @@ import GroupIcon from "@mui/icons-material/Group";
 import MiscellaneousServicesIcon from "@mui/icons-material/MiscellaneousServices";
 import AddBoxIcon from "@mui/icons-material/AddBox";
 import AssignmentTurnedInIcon from "@mui/icons-material/AssignmentTurnedIn";
+import BatchPredictionSharpIcon from "@mui/icons-material/BatchPredictionSharp";
 
 const drawerWidth = 240;
 
@@ -30,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: "column",
   },
   selectedItem: {
-    backgroundColor: "#A8ACB5",
+    backgroundColor: "#DADADA",
   },
   // necessary for content to be below app bar
   toolbar: theme.mixins.toolbar,
@@ -102,6 +103,17 @@ function SideNav(props) {
               <AddBoxIcon />
             </ListItemIcon>
             <ListItemText primary={"Create a ticket"} />
+          </ListItem>
+          <ListItem
+            button
+            key={"Systems"}
+            className={focused === "Systems" ? classes.selectedItem : null}
+            onFocus={() => setFocused("Systems")}
+          >
+            <ListItemIcon>
+              <BatchPredictionSharpIcon />
+            </ListItemIcon>
+            <ListItemText primary={"Systems"} />
           </ListItem>
         </List>
         <Divider />
