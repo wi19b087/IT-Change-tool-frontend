@@ -6,6 +6,7 @@ import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
 
 import SideNav from "./SideNav";
+import UserContainer from "./UserContainer";
 
 // const backGroundColorLight = "#282c34";
 // const backGroundColor = "#000000";
@@ -59,11 +60,12 @@ function App() {
 
             <Grid item xs={6} md={2}>
               {/* <SidebarItem>SIDEBAR</SidebarItem> */}
-              <SideNav></SideNav>
+              <SideNav />
             </Grid>
 
             <Grid item xs={6} md={8}>
-              <MainItem>MAIN AREA</MainItem>
+              {/* <MainItem>MAIN AREA</MainItem> */}
+              <UserContainer />
             </Grid>
 
             <Grid item xs={6} md={2}>
