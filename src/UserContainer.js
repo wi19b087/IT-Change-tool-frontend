@@ -18,6 +18,16 @@ const styles = {
     alignItems: "center",
     justifyContent: "space-between",
   },
+  userContainer: {
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    width: "20vw",
+  },
+  singleContainer: {
+    minWidth: "100px",
+  },
 };
 
 const renderUserCard = (user) => {
@@ -25,15 +35,28 @@ const renderUserCard = (user) => {
   return (
     <Card variant="outlined" style={styles.cardContainer}>
       <CardContent style={styles.contentContainer}>
-        <Avatar>
-          <AccountCircleIcon />
-        </Avatar>
-        <Typography variant="body1" component="p">
-          {user.name}
-        </Typography>
-        <Typography variant="body2" component="h2" color="textSecondary">
-          {user.group}
-        </Typography>
+        <div style={styles.userContainer}>
+          <div style={styles.singleContainer}>
+            <Avatar>
+              <AccountCircleIcon />
+            </Avatar>
+          </div>
+          <Typography
+            variant="body1"
+            component="p"
+            style={styles.singleContainer}
+          >
+            {user.name}
+          </Typography>
+          <Typography
+            variant="body2"
+            component="h2"
+            color="textSecondary"
+            style={styles.singleContainer}
+          >
+            {user.group}
+          </Typography>
+        </div>
         <Button>
           <InfoIcon />
         </Button>

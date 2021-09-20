@@ -74,15 +74,11 @@ function App() {
           </Grid>
         </Box>
       </div>
-      <Footer />
+      <Grid item xs={12} zeroMinWidth style={{ overflow: "hidden" }}>
+        <FooterItem>Footer</FooterItem>
+      </Grid>
     </div>
   );
 }
-
-const Footer = () => (
-  <Grid item xs={12} zeroMinWidth style={{ overflow: "hidden" }}>
-    <FooterItem>Footer</FooterItem>
-  </Grid>
-);
 
 export default App;
