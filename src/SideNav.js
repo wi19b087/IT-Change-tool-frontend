@@ -15,6 +15,7 @@ import Typography from "@material-ui/core/Typography";
 import Paper from "@mui/material/Paper";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 
+import HomeIcon from "@mui/icons-material/Home";
 import GroupIcon from "@mui/icons-material/Group";
 import MiscellaneousServicesIcon from "@mui/icons-material/MiscellaneousServices";
 import AddBoxIcon from "@mui/icons-material/AddBox";
@@ -43,6 +44,12 @@ function SideNav(props) {
       <Paper>
         <Divider />
         <List>
+          <ListItem button key={"Home"}>
+            <ListItemIcon>
+              <HomeIcon />
+            </ListItemIcon>
+            <ListItemText primary={"Home"} />
+          </ListItem>
           <ListItem button key={"Users"}>
             <ListItemIcon>
               <GroupIcon />
