@@ -33,7 +33,7 @@ const styles = {
 const renderUserCard = (user) => {
   console.log({ user });
   return (
-    <Card variant="outlined" style={styles.cardContainer}>
+    <Card variant="outlined" style={styles.cardContainer} key={user.id}>
       <CardContent style={styles.contentContainer}>
         <div style={styles.userContainer}>
           <div style={styles.singleContainer}>

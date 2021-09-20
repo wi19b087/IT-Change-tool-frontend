@@ -29,6 +29,9 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
     flexDirection: "column",
   },
+  selectedItem: {
+    backgroundColor: "#A8ACB5",
+  },
   // necessary for content to be below app bar
   toolbar: theme.mixins.toolbar,
   drawerPaper: {
@@ -38,37 +41,63 @@ const useStyles = makeStyles((theme) => ({
 
 function SideNav(props) {
   const classes = useStyles();
+  const [focused, setFocused] = React.useState("Home");
 
   return (
     <div className={classes.root}>
       <Paper>
         <Divider />
         <List>
-          <ListItem button key={"Home"}>
+          <ListItem
+            button
+            key={"Home"}
+            className={focused === "Home" ? classes.selectedItem : null}
+            onFocus={() => setFocused("Home")}
+          >
             <ListItemIcon>
               <HomeIcon />
             </ListItemIcon>
             <ListItemText primary={"Home"} />
           </ListItem>
-          <ListItem button key={"Users"}>
+          <ListItem
+            button
+            key={"Users"}
+            className={focused === "Users" ? classes.selectedItem : null}
+            onFocus={() => setFocused("Users")}
+          >
             <ListItemIcon>
               <GroupIcon />
             </ListItemIcon>
             <ListItemText primary={"Users"} />
           </ListItem>
-          <ListItem button key={"Running Services"}>
+          <ListItem
+            button
+            key={"Running services"}
+            className={focused === "running" ? classes.selectedItem : null}
+            onFocus={() => setFocused("running")}
+          >
             <ListItemIcon>
               <MiscellaneousServicesIcon />
             </ListItemIcon>
-            <ListItemText primary={"Running Services"} />
+            <ListItemText primary={"Running services"} />
           </ListItem>
-          <ListItem button key={"Completed Services"}>
+          <ListItem
+            button
+            key={"Completed services"}
+            className={focused === "services" ? classes.selectedItem : null}
+            onFocus={() => setFocused("services")}
+          >
             <ListItemIcon>
               <AssignmentTurnedInIcon />
             </ListItemIcon>
-            <ListItemText primary={"Completed Services"} />
+            <ListItemText primary={"Completed services"} />
           </ListItem>
-          <ListItem button key={"Create a ticket"}>
+          <ListItem
+            button
+            key={"Create a ticket"}
+            className={focused === "ticket" ? classes.selectedItem : null}
+            onFocus={() => setFocused("ticket")}
+          >
             <ListItemIcon>
               <AddBoxIcon />
             </ListItemIcon>
