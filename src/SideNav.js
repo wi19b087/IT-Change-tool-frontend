@@ -15,6 +15,11 @@ import Typography from "@material-ui/core/Typography";
 import Paper from "@mui/material/Paper";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 
+import GroupIcon from "@mui/icons-material/Group";
+import MiscellaneousServicesIcon from "@mui/icons-material/MiscellaneousServices";
+import AddBoxIcon from "@mui/icons-material/AddBox";
+import AssignmentTurnedInIcon from "@mui/icons-material/AssignmentTurnedIn";
+
 const drawerWidth = 240;
 
 const useStyles = makeStyles((theme) => ({
@@ -38,26 +43,32 @@ function SideNav(props) {
       <Paper>
         <Divider />
         <List>
-          {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
-          ))}
+          <ListItem button key={"Users"}>
+            <ListItemIcon>
+              <GroupIcon />
+            </ListItemIcon>
+            <ListItemText primary={"Users"} />
+          </ListItem>
+          <ListItem button key={"Running Services"}>
+            <ListItemIcon>
+              <MiscellaneousServicesIcon />
+            </ListItemIcon>
+            <ListItemText primary={"Running Services"} />
+          </ListItem>
+          <ListItem button key={"Completed Services"}>
+            <ListItemIcon>
+              <AssignmentTurnedInIcon />
+            </ListItemIcon>
+            <ListItemText primary={"Completed Services"} />
+          </ListItem>
+          <ListItem button key={"Create a ticket"}>
+            <ListItemIcon>
+              <AddBoxIcon />
+            </ListItemIcon>
+            <ListItemText primary={"Create a ticket"} />
+          </ListItem>
         </List>
         <Divider />
-        <List>
-          {["All mail", "Trash", "Spam"].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
-          ))}
-        </List>
       </Paper>
     </div>
   );
