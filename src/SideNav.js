@@ -42,7 +42,7 @@ const useStyles = makeStyles((theme) => ({
 
 function SideNav(props) {
   const classes = useStyles();
-  const [focused, setFocused] = React.useState("Home");
+  const [currentPage, setCurrentPage] = React.useState("Home");
 
   return (
     <div className={classes.root}>
@@ -51,9 +51,9 @@ function SideNav(props) {
         <List>
           <ListItem
             button
-            key={"Home"}
-            className={focused === "Home" ? classes.selectedItem : null}
-            onFocus={() => setFocused("Home")}
+            key={"home"}
+            className={currentPage === "home" ? classes.selectedItem : null}
+            onFocus={() => setCurrentPage("home")}
           >
             <ListItemIcon>
               <HomeIcon />
@@ -62,9 +62,9 @@ function SideNav(props) {
           </ListItem>
           <ListItem
             button
-            key={"Users"}
-            className={focused === "Users" ? classes.selectedItem : null}
-            onFocus={() => setFocused("Users")}
+            key={"users"}
+            className={currentPage === "users" ? classes.selectedItem : null}
+            onFocus={() => setCurrentPage("users")}
           >
             <ListItemIcon>
               <GroupIcon />
@@ -73,9 +73,11 @@ function SideNav(props) {
           </ListItem>
           <ListItem
             button
-            key={"Running services"}
-            className={focused === "running" ? classes.selectedItem : null}
-            onFocus={() => setFocused("running")}
+            key={"running-services"}
+            className={
+              currentPage === "running-services" ? classes.selectedItem : null
+            }
+            onFocus={() => setCurrentPage("running-services")}
           >
             <ListItemIcon>
               <MiscellaneousServicesIcon />
@@ -84,9 +86,11 @@ function SideNav(props) {
           </ListItem>
           <ListItem
             button
-            key={"Completed services"}
-            className={focused === "services" ? classes.selectedItem : null}
-            onFocus={() => setFocused("services")}
+            key={"completed-services"}
+            className={
+              currentPage === "completed-services" ? classes.selectedItem : null
+            }
+            onFocus={() => setCurrentPage("completed-services")}
           >
             <ListItemIcon>
               <AssignmentTurnedInIcon />
@@ -95,20 +99,22 @@ function SideNav(props) {
           </ListItem>
           <ListItem
             button
-            key={"Create a ticket"}
-            className={focused === "ticket" ? classes.selectedItem : null}
-            onFocus={() => setFocused("ticket")}
+            key={"create-ticket"}
+            className={
+              currentPage === "create-ticket" ? classes.selectedItem : null
+            }
+            onFocus={() => setCurrentPage("create-ticket")}
           >
             <ListItemIcon>
               <AddBoxIcon />
             </ListItemIcon>
-            <ListItemText primary={"Create a ticket"} />
+            <ListItemText primary={"Create ticket"} />
           </ListItem>
           <ListItem
             button
-            key={"Systems"}
-            className={focused === "Systems" ? classes.selectedItem : null}
-            onFocus={() => setFocused("Systems")}
+            key={"systems"}
+            className={currentPage === "systems" ? classes.selectedItem : null}
+            onFocus={() => setCurrentPage("systems")}
           >
             <ListItemIcon>
               <BatchPredictionSharpIcon />
