@@ -43,6 +43,7 @@ const styles = {
   },
   menuItem: {
     display: "block",
+    padding: "2vh",
   },
 };
 
