@@ -8,6 +8,8 @@ import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import InfoIcon from "@mui/icons-material/Info";
 import Avatar from "@mui/material/Avatar";
 
+import AddUser from "./AddUser";
+
 const styles = {
   cardContainer: {
     marginBottom: "1vh",
@@ -86,7 +88,13 @@ const UserContainer = (props) => {
       group: "Developer",
     },
   ];
-  return users ? <div>{users.map((u) => renderUserCard(u))}</div> : <div />;
+  return (
+    <div>
+      <AddUser />
+
+      {users ? <div>{users.map((u) => renderUserCard(u))}</div> : <div />}
+    </div>
+  );
 };
 
 export default UserContainer;
