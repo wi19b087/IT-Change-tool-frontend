@@ -69,7 +69,20 @@ function GlobalComponent() {
 
             <Grid item xs={6} md={8}>
               {/* <MainItem>MAIN AREA</MainItem> */}
-              contextState.currentPage === "users" ? <UserContainer /> : null
+              {contextState.currentPage === "home" ? <UserContainer /> : null}
+              {contextState.currentPage === "users" ? <UserContainer /> : null}
+              {contextState.currentPage === "running-services" ? (
+                <UserContainer />
+              ) : null}
+              {contextState.currentPage === "completed-services" ? (
+                <UserContainer />
+              ) : null}
+              {contextState.currentPage === "create-ticket" ? (
+                <UserContainer />
+              ) : null}
+              {contextState.currentPage === "systems" ? (
+                <UserContainer />
+              ) : null}
               {/* <UserContainer /> */}
             </Grid>
 
