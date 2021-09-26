@@ -15,6 +15,8 @@ import Typography from "@material-ui/core/Typography";
 import Paper from "@mui/material/Paper";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 
+import { PageContext } from "./context";
+
 import HomeIcon from "@mui/icons-material/Home";
 import GroupIcon from "@mui/icons-material/Group";
 import MiscellaneousServicesIcon from "@mui/icons-material/MiscellaneousServices";
@@ -42,7 +44,8 @@ const useStyles = makeStyles((theme) => ({
 
 function SideNav(props) {
   const classes = useStyles();
-  const [currentPage, setCurrentPage] = React.useState("Home");
+  const { contextState, updateContext } = React.useContext(PageContext);
+  console.log("You selected Page: " + contextState.currentPage);
 
   return (
     <div className={classes.root}>
@@ -52,8 +55,15 @@ function SideNav(props) {
           <ListItem
             button
             key={"home"}
-            className={currentPage === "home" ? classes.selectedItem : null}
-            onFocus={() => setCurrentPage("home")}
+            className={
+              contextState.currentPage === "home" ? classes.selectedItem : null
+            }
+            onFocus={() =>
+              updateContext({
+                type: "setCurrentPage",
+                payload: "home",
+              })
+            }
           >
             <ListItemIcon>
               <HomeIcon />
@@ -63,8 +73,15 @@ function SideNav(props) {
           <ListItem
             button
             key={"users"}
-            className={currentPage === "users" ? classes.selectedItem : null}
-            onFocus={() => setCurrentPage("users")}
+            className={
+              contextState.currentPage === "users" ? classes.selectedItem : null
+            }
+            onFocus={() =>
+              updateContext({
+                type: "setCurrentPage",
+                payload: "users",
+              })
+            }
           >
             <ListItemIcon>
               <GroupIcon />
@@ -75,9 +92,16 @@ function SideNav(props) {
             button
             key={"running-services"}
             className={
-              currentPage === "running-services" ? classes.selectedItem : null
+              contextState.currentPage === "running-services"
+                ? classes.selectedItem
+                : null
             }
-            onFocus={() => setCurrentPage("running-services")}
+            onFocus={() =>
+              updateContext({
+                type: "setCurrentPage",
+                payload: "running-services",
+              })
+            }
           >
             <ListItemIcon>
               <MiscellaneousServicesIcon />
@@ -88,9 +112,16 @@ function SideNav(props) {
             button
             key={"completed-services"}
             className={
-              currentPage === "completed-services" ? classes.selectedItem : null
+              contextState.currentPage === "completed-services"
+                ? classes.selectedItem
+                : null
             }
-            onFocus={() => setCurrentPage("completed-services")}
+            onFocus={() =>
+              updateContext({
+                type: "setCurrentPage",
+                payload: "completed-services",
+              })
+            }
           >
             <ListItemIcon>
               <AssignmentTurnedInIcon />
@@ -101,9 +132,16 @@ function SideNav(props) {
             button
             key={"create-ticket"}
             className={
-              currentPage === "create-ticket" ? classes.selectedItem : null
+              contextState.currentPage === "create-ticket"
+                ? classes.selectedItem
+                : null
             }
-            onFocus={() => setCurrentPage("create-ticket")}
+            onFocus={() =>
+              updateContext({
+                type: "setCurrentPage",
+                payload: "create-ticket",
+              })
+            }
           >
             <ListItemIcon>
               <AddBoxIcon />
@@ -113,8 +151,17 @@ function SideNav(props) {
           <ListItem
             button
             key={"systems"}
-            className={currentPage === "systems" ? classes.selectedItem : null}
-            onFocus={() => setCurrentPage("systems")}
+            className={
+              contextState.currentPage === "systems"
+                ? classes.selectedItem
+                : null
+            }
+            onFocus={() =>
+              updateContext({
+                type: "setCurrentPage",
+                payload: "systems",
+              })
+            }
           >
             <ListItemIcon>
               <BatchPredictionSharpIcon />

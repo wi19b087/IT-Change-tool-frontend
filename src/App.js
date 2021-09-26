@@ -5,6 +5,8 @@ import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
 
+import { PageContext } from "./context";
+import { PageContextProvider } from "./context";
 import SideNav from "./SideNav";
 import UserContainer from "./UserContainer";
 
@@ -48,7 +50,9 @@ const FooterItem = styled(Paper)(({ theme }) => ({
   maxHeight: "10vh",
 }));
 
-function App() {
+function GlobalComponent() {
+  const { contextState, updateContext } = React.useContext(PageContext);
+  console.log("Current Global State: " + JSON.stringify(contextState));
   return (
     <div className="App">
       <div className="App-body">
@@ -65,7 +69,8 @@ function App() {
 
             <Grid item xs={6} md={8}>
               {/* <MainItem>MAIN AREA</MainItem> */}
-              <UserContainer />
+              contextState.currentPage === "users" ? <UserContainer /> : null
+              {/* <UserContainer /> */}
             </Grid>
 
             <Grid item xs={6} md={2}>
@@ -81,4 +86,10 @@ function App() {
   );
 }
 
-export default App;
+export default function App() {
+  return (
+    <PageContextProvider>
+      <GlobalComponent></GlobalComponent>
+    </PageContextProvider>
+  );
+}
