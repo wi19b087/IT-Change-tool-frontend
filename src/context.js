@@ -1,5 +1,6 @@
-import React, { useReducer } from "react";
 // Source: https://itnext.io/react-hooks-with-context-as-a-state-management-solution-526d1c13a07d
+import React, { useReducer } from "react";
+
 const initialState = {
   currentPage: "home",
 };

@@ -34,6 +34,9 @@ const useStyles = makeStyles((theme) => ({
   },
   selectedItem: {
     backgroundColor: "#DADADA",
+    "&:hover": {
+      backgroundColor: "#AEAEAE",
+    },
   },
   // necessary for content to be below app bar
   toolbar: theme.mixins.toolbar,
