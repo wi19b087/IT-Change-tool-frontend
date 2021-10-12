@@ -9,6 +9,7 @@ import { PageContext } from "./context";
 import { PageContextProvider } from "./context";
 import SideNav from "./SideNav";
 import UserContainer from "./UserContainer";
+import useResizer from "./useResizer";
 
 // const backGroundColorLight = "#282c34";
 // const backGroundColor = "#000000";
@@ -53,50 +54,57 @@ const FooterItem = styled(Paper)(({ theme }) => ({
 function GlobalComponent() {
   const { contextState, updateContext } = React.useContext(PageContext);
   console.log("Current Global State: " + JSON.stringify(contextState));
-  return (
-    <div className="App">
-      <div className="App-body">
-        <Box sx={{ flexGrow: 1 }}>
-          <Grid container spacing={2}>
-            <Grid item xs={12}>
-              <HeaderItem>xs=12 INSERT HEADER here</HeaderItem>
-            </Grid>
+  const isMobileSize = useResizer();
+  if (isMobileSize) {
+    return <div>No mobile support</div>;
+  } else {
+    return (
+      <div className="App">
+        <div className="App-body">
+          <Box sx={{ flexGrow: 1 }}>
+            <Grid container spacing={2}>
+              <Grid item xs={12}>
+                <HeaderItem>xs=12 INSERT HEADER here</HeaderItem>
+              </Grid>
 
-            <Grid item xs={6} md={2}>
-              {/* <SidebarItem>SIDEBAR</SidebarItem> */}
-              <SideNav />
-            </Grid>
+              <Grid item xs={6} md={2}>
+                {/* <SidebarItem>SIDEBAR</SidebarItem> */}
+                <SideNav />
+              </Grid>
 
-            <Grid item xs={6} md={8}>
-              {/* <MainItem>MAIN AREA</MainItem> */}
-              {contextState.currentPage === "home" ? <UserContainer /> : null}
-              {contextState.currentPage === "users" ? <UserContainer /> : null}
-              {contextState.currentPage === "running-services" ? (
-                <UserContainer />
-              ) : null}
-              {contextState.currentPage === "completed-services" ? (
-                <UserContainer />
-              ) : null}
-              {contextState.currentPage === "create-ticket" ? (
-                <UserContainer />
-              ) : null}
-              {contextState.currentPage === "systems" ? (
-                <UserContainer />
-              ) : null}
-              {/* <UserContainer /> */}
-            </Grid>
+              <Grid item xs={6} md={8}>
+                {/* <MainItem>MAIN AREA</MainItem> */}
+                {contextState.currentPage === "home" ? <UserContainer /> : null}
+                {contextState.currentPage === "users" ? (
+                  <UserContainer />
+                ) : null}
+                {contextState.currentPage === "running-services" ? (
+                  <UserContainer />
+                ) : null}
+                {contextState.currentPage === "completed-services" ? (
+                  <UserContainer />
+                ) : null}
+                {contextState.currentPage === "create-ticket" ? (
+                  <UserContainer />
+                ) : null}
+                {contextState.currentPage === "systems" ? (
+                  <UserContainer />
+                ) : null}
+                {/* <UserContainer /> */}
+              </Grid>
 
-            <Grid item xs={6} md={2}>
-              <InfoItem>EMTPY OR INFO</InfoItem>
+              <Grid item xs={6} md={2}>
+                <InfoItem>EMTPY OR INFO</InfoItem>
+              </Grid>
             </Grid>
-          </Grid>
-        </Box>
+          </Box>
+        </div>
+        <Grid item xs={12} zeroMinWidth style={{ overflow: "hidden" }}>
+          <FooterItem>Footer</FooterItem>
+        </Grid>
       </div>
-      <Grid item xs={12} zeroMinWidth style={{ overflow: "hidden" }}>
-        <FooterItem>Footer</FooterItem>
-      </Grid>
-    </div>
-  );
+    );
+  }
 }
 
 export default function App() {
