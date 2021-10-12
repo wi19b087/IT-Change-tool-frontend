@@ -25,5 +25,6 @@
 .App-body {
   background-color: #282c34;
   min-height: 100vh;
-  margin: 1vh;
+  margin-left: 1vw;
+  margin-right: 1vw;
 }

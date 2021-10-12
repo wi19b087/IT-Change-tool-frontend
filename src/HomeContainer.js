@@ -37,6 +37,7 @@ const HomeContainer = (props) => {
         key={"home-container-card"}
       >
         <CardContent style={styles.contentContainer}>
+          Assigned tasks:
           <SchedulerContainer />
         </CardContent>
         {/* <Button>
