@@ -45,6 +45,11 @@ const styles = {
     display: "block",
     padding: "2vh",
   },
+  button: {
+    backgroundColor: "blue",
+    color: "white",
+    minWidth: 100,
+  },
 };
 
 const AddUser = (props) => {
@@ -97,6 +102,9 @@ const AddUser = (props) => {
               </Select>
             </FormControl>
           </div>
+          <Button variant="contained" style={styles.button}>
+            Add
+          </Button>
         </CardContent>
         {/* <Button>
           <InfoIcon />
