@@ -1,5 +1,4 @@
 import React from "react";
-import { render } from "react-dom";
 import Paper from "@material-ui/core/Paper";
 import { ViewState } from "@devexpress/dx-react-scheduler";
 import {
@@ -10,6 +9,8 @@ import {
 import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 import { blue } from "@material-ui/core/colors";
 
+// SOURCE: https://codesandbox.io/s/0y4zvoxl8v?file=/index.js
+// https://devexpress.github.io/devextreme-reactive/react/scheduler/docs/guides/getting-started/
 const theme = createMuiTheme({ palette: { type: "light", primary: blue } });
 
 const SchedulerContainer = (props) => {
