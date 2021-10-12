@@ -7,9 +7,10 @@ import Grid from "@mui/material/Grid";
 
 import { PageContext } from "./context";
 import { PageContextProvider } from "./context";
+import useResizer from "./useResizer";
 import SideNav from "./SideNav";
 import UserContainer from "./UserContainer";
-import useResizer from "./useResizer";
+import HomeContainer from "./HomeContainer";
 
 // const backGroundColorLight = "#282c34";
 // const backGroundColor = "#000000";
@@ -74,7 +75,7 @@ function GlobalComponent() {
 
               <Grid item xs={6} md={8}>
                 {/* <MainItem>MAIN AREA</MainItem> */}
-                {contextState.currentPage === "home" ? <UserContainer /> : null}
+                {contextState.currentPage === "home" ? <HomeContainer /> : null}
                 {contextState.currentPage === "users" ? (
                   <UserContainer />
                 ) : null}
