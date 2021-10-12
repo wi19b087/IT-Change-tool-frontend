@@ -8,7 +8,7 @@ import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import InfoIcon from "@mui/icons-material/Info";
 import Avatar from "@mui/material/Avatar";
 
-import AddUser from "./AddUser";
+import SchedulerContainer from "./SchedulerContainer";
 
 const styles = {
   cardContainer: {
@@ -36,7 +36,9 @@ const HomeContainer = (props) => {
         style={styles.cardContainer}
         key={"home-container-card"}
       >
-        <CardContent style={styles.contentContainer}>SCHEDULER</CardContent>
+        <CardContent style={styles.contentContainer}>
+          <SchedulerContainer />
+        </CardContent>
         {/* <Button>
           <InfoIcon />
         </Button> */}
