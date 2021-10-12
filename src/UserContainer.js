@@ -13,6 +13,7 @@ import AddUser from "./AddUser";
 const styles = {
   cardContainer: {
     marginBottom: "1vh",
+    minWidth: "400px",
   },
   contentContainer: {
     display: "flex",

@@ -17,7 +17,7 @@ import NativeSelect from "@mui/material/NativeSelect";
 const styles = {
   cardContainer: {
     marginBottom: "1vh",
-    // height: "100vh",
+    minWidth: "400px",
   },
   contentContainer: {
     display: "flex",

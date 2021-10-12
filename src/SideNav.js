@@ -31,6 +31,7 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     justifyContent: "center",
     flexDirection: "column",
+    minWidth: "200px",
   },
   selectedItem: {
     backgroundColor: "#DADADA",
