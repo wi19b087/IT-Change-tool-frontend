@@ -1,12 +1,6 @@
 import React, { useRef, useState } from "react";
 import Card from "@material-ui/core/Card";
-import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
-import Button from "@material-ui/core/Button";
-import Typography from "@material-ui/core/Typography";
-import AccountCircleIcon from "@mui/icons-material/AccountCircle";
-import InfoIcon from "@mui/icons-material/Info";
-import Avatar from "@mui/material/Avatar";
 
 import SchedulerContainer from "./SchedulerContainer";
 import DropDown from "./DropDown";
@@ -29,11 +23,18 @@ const styles = {
 
 const HomeContainer = (props) => {
   //   const { runningServices, completedServices } = props;
-
+  const runningServices = [
+    {
+      name: "Update Azure",
+    },
+    {
+      name: "Update Google Cloud",
+    },
+  ];
   return (
     <div>
-      <DropDown label="Running services" />
-      <DropDown label="Completed services" />
+      <DropDown label="Running services" items={runningServices} />
+      <DropDown label="Completed services" items={runningServices} />
       <Card
         variant="outlined"
         style={styles.cardContainer}
@@ -42,10 +43,6 @@ const HomeContainer = (props) => {
         <CardContent style={styles.contentContainer}>
           <SchedulerContainer />
         </CardContent>
-        {/* <Button>
-          <InfoIcon />
-        </Button> */}
-        {/* <CardActions></CardActions> */}
       </Card>
     </div>
   );
