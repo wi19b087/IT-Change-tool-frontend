@@ -61,13 +61,12 @@ function GlobalComponent() {
   } else {
     return (
       <div className="App">
+        <Grid item xs={12} zeroMinWidth style={{ overflow: "hidden" }}>
+          <HeaderItem>xs=12 INSERT HEADER here</HeaderItem>
+        </Grid>
         <div className="App-body">
           <Box sx={{ flexGrow: 1 }}>
             <Grid container spacing={2}>
-              <Grid item xs={12}>
-                <HeaderItem>xs=12 INSERT HEADER here</HeaderItem>
-              </Grid>
-
               <Grid item xs={6} md={2}>
                 {/* <SidebarItem>SIDEBAR</SidebarItem> */}
                 <SideNav />
