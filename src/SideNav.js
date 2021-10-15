@@ -53,128 +53,124 @@ function SideNav(props) {
 
   return (
     <div className={classes.root}>
-      <Paper>
-        <Divider />
-        <List>
-          <ListItem
-            button
-            key={"home"}
-            className={
-              contextState.currentPage === "home" ? classes.selectedItem : null
-            }
-            onFocus={() =>
-              updateContext({
-                type: "setCurrentPage",
-                payload: "home",
-              })
-            }
-          >
-            <ListItemIcon>
-              <HomeIcon />
-            </ListItemIcon>
-            <ListItemText primary={"Home"} />
-          </ListItem>
-          <ListItem
-            button
-            key={"users"}
-            className={
-              contextState.currentPage === "users" ? classes.selectedItem : null
-            }
-            onFocus={() =>
-              updateContext({
-                type: "setCurrentPage",
-                payload: "users",
-              })
-            }
-          >
-            <ListItemIcon>
-              <GroupIcon />
-            </ListItemIcon>
-            <ListItemText primary={"Users"} />
-          </ListItem>
-          <ListItem
-            button
-            key={"running-services"}
-            className={
-              contextState.currentPage === "running-services"
-                ? classes.selectedItem
-                : null
-            }
-            onFocus={() =>
-              updateContext({
-                type: "setCurrentPage",
-                payload: "running-services",
-              })
-            }
-          >
-            <ListItemIcon>
-              <MiscellaneousServicesIcon />
-            </ListItemIcon>
-            <ListItemText primary={"Running services"} />
-          </ListItem>
-          <ListItem
-            button
-            key={"completed-services"}
-            className={
-              contextState.currentPage === "completed-services"
-                ? classes.selectedItem
-                : null
-            }
-            onFocus={() =>
-              updateContext({
-                type: "setCurrentPage",
-                payload: "completed-services",
-              })
-            }
-          >
-            <ListItemIcon>
-              <AssignmentTurnedInIcon />
-            </ListItemIcon>
-            <ListItemText primary={"Completed services"} />
-          </ListItem>
-          <ListItem
-            button
-            key={"create-ticket"}
-            className={
-              contextState.currentPage === "create-ticket"
-                ? classes.selectedItem
-                : null
-            }
-            onFocus={() =>
-              updateContext({
-                type: "setCurrentPage",
-                payload: "create-ticket",
-              })
-            }
-          >
-            <ListItemIcon>
-              <AddBoxIcon />
-            </ListItemIcon>
-            <ListItemText primary={"Create ticket"} />
-          </ListItem>
-          <ListItem
-            button
-            key={"systems"}
-            className={
-              contextState.currentPage === "systems"
-                ? classes.selectedItem
-                : null
-            }
-            onFocus={() =>
-              updateContext({
-                type: "setCurrentPage",
-                payload: "systems",
-              })
-            }
-          >
-            <ListItemIcon>
-              <BatchPredictionSharpIcon />
-            </ListItemIcon>
-            <ListItemText primary={"Systems"} />
-          </ListItem>
-        </List>
-        <Divider />
-      </Paper>
+      <Divider />
+      <List>
+        <ListItem
+          button
+          key={"home"}
+          className={
+            contextState.currentPage === "home" ? classes.selectedItem : null
+          }
+          onFocus={() =>
+            updateContext({
+              type: "setCurrentPage",
+              payload: "home",
+            })
+          }
+        >
+          <ListItemIcon>
+            <HomeIcon />
+          </ListItemIcon>
+          <ListItemText primary={"Home"} />
+        </ListItem>
+        <ListItem
+          button
+          key={"users"}
+          className={
+            contextState.currentPage === "users" ? classes.selectedItem : null
+          }
+          onFocus={() =>
+            updateContext({
+              type: "setCurrentPage",
+              payload: "users",
+            })
+          }
+        >
+          <ListItemIcon>
+            <GroupIcon />
+          </ListItemIcon>
+          <ListItemText primary={"Users"} />
+        </ListItem>
+        <ListItem
+          button
+          key={"running-services"}
+          className={
+            contextState.currentPage === "running-services"
+              ? classes.selectedItem
+              : null
+          }
+          onFocus={() =>
+            updateContext({
+              type: "setCurrentPage",
+              payload: "running-services",
+            })
+          }
+        >
+          <ListItemIcon>
+            <MiscellaneousServicesIcon />
+          </ListItemIcon>
+          <ListItemText primary={"Running services"} />
+        </ListItem>
+        <ListItem
+          button
+          key={"completed-services"}
+          className={
+            contextState.currentPage === "completed-services"
+              ? classes.selectedItem
+              : null
+          }
+          onFocus={() =>
+            updateContext({
+              type: "setCurrentPage",
+              payload: "completed-services",
+            })
+          }
+        >
+          <ListItemIcon>
+            <AssignmentTurnedInIcon />
+          </ListItemIcon>
+          <ListItemText primary={"Completed services"} />
+        </ListItem>
+        <ListItem
+          button
+          key={"create-ticket"}
+          className={
+            contextState.currentPage === "create-ticket"
+              ? classes.selectedItem
+              : null
+          }
+          onFocus={() =>
+            updateContext({
+              type: "setCurrentPage",
+              payload: "create-ticket",
+            })
+          }
+        >
+          <ListItemIcon>
+            <AddBoxIcon />
+          </ListItemIcon>
+          <ListItemText primary={"Create ticket"} />
+        </ListItem>
+        <ListItem
+          button
+          key={"systems"}
+          className={
+            contextState.currentPage === "systems" ? classes.selectedItem : null
+          }
+          onFocus={() =>
+            updateContext({
+              type: "setCurrentPage",
+              payload: "systems",
+            })
+          }
+        >
+          <ListItemIcon>
+            <BatchPredictionSharpIcon />
+          </ListItemIcon>
+          <ListItemText primary={"Systems"} />
+        </ListItem>
+      </List>
+      <Divider />
     </div>
   );
 }
