@@ -9,6 +9,7 @@ import InfoIcon from "@mui/icons-material/Info";
 import Avatar from "@mui/material/Avatar";
 
 import SchedulerContainer from "./SchedulerContainer";
+import DropDown from "./DropDown";
 
 const styles = {
   cardContainer: {
@@ -27,17 +28,18 @@ const styles = {
 };
 
 const HomeContainer = (props) => {
-  //   const { users, banUser } = props;
+  //   const { runningServices, completedServices } = props;
 
   return (
     <div>
+      <DropDown label="Running services" />
+      <DropDown label="Completed services" />
       <Card
         variant="outlined"
         style={styles.cardContainer}
         key={"home-container-card"}
       >
         <CardContent style={styles.contentContainer}>
-          Assigned tasks:
           <SchedulerContainer />
         </CardContent>
         {/* <Button>
